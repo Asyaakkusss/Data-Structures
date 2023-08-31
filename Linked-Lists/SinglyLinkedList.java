@@ -40,4 +40,13 @@ public class SinglyLinkedList<T> {
         ptr = null; 
     }
 
+    public void remove_node_from_front() {
+        if (first_node != null) {
+            Node<T> new_first = first_node.next_node; 
+            if (new_first != null)
+                first_node = new_first;
+            else 
+                first_node = null; 
+        }
+    }
 }
