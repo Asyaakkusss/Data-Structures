@@ -21,4 +21,15 @@ public class SinglyLinkedList<T> {
         }
     }
 
+    public void insert_node_at_front (T inserted_value) {
+        Node<T> new_node = new Node<T>(inserted_value); 
+        Node<T> previous_first_node = new Node<T>(first_node.node_contents); 
+        if (first_node == null)
+            first_node = new_node; 
+        else {
+            first_node = new_node; 
+            first_node.next_node = previous_first_node; 
+        }
+    }
+
 }
