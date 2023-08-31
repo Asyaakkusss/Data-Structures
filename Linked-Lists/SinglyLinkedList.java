@@ -1,10 +1,11 @@
+import java.util.LinkedList;
 
 public class SinglyLinkedList<T> {
 
     Node<T> first_node; 
 
-    public SinglyLinkedList() {
-        this.first_node = null; 
+    public SinglyLinkedList(Node<T>first_node) {
+        this.first_node = first_node; 
     }
 
     public void insert_node_at_back (T inserted_value) {
@@ -33,6 +34,12 @@ public class SinglyLinkedList<T> {
     }
 
     public void remove_node_from_back() {
+        if (first_node == null)
+            return; 
+
+        if (first_node.next_node == null)
+            first_node = null; 
+
         Node<T> ptr = first_node; 
         while (ptr.next_node != null) {
             ptr = ptr.next_node; 
@@ -49,4 +56,23 @@ public class SinglyLinkedList<T> {
                 first_node = null; 
         }
     }
+
+    public void print_list() {
+        Node<T> ptr = first_node; 
+
+        while (ptr != null) {
+            System.out.println(ptr.node_contents + " "); 
+            ptr = ptr.next_node; 
+        }
+    }
+
+    public static void main (String[]args) {
+        Node<T> 
+        SinglyLinkedList<Integer> integerList = new SinglyLinkedList<>();
+        integerList.insert_node_at_back(10);
+        integerList.insert_node_at_back(20);
+        integerList.insert_node_at_back(30);
+        integerList.print_list(); 
+    }
+
 }
