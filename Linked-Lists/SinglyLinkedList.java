@@ -32,4 +32,12 @@ public class SinglyLinkedList<T> {
         }
     }
 
+    public void remove_node_from_back() {
+        Node<T> ptr = first_node; 
+        while (ptr.next_node != null) {
+            ptr = ptr.next_node; 
+        }
+        ptr = null; 
+    }
+
 }
